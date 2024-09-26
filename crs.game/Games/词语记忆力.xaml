@@ -1,0 +1,46 @@
+﻿<local:BaseUserControl x:Class="crs.game.Games.词语记忆力"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:crs.game"
+                 Background="#79b63f" Height="720" Width="1280">
+    <Grid Margin="20" Background="#d0e3b6">
+        <!--
+    以下是记忆阶段时的组件
+    -->
+        <!-- 下面这个TextBlock是记忆阶段的TextBlock，记忆完了要隐藏掉，默认隐藏，需要手动显示 -->
+        <StackPanel HorizontalAlignment="Center" >
+            <TextBlock  Text="Words" TextAlignment="Center" Name="WordsToMemorizeTextBLock"
+        HorizontalAlignment="Center" Height="471" Width="180" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}"  Margin="0,10,0,0" Visibility="Collapsed"/>
+        </StackPanel>
+        <!-- 下面这个Button是记忆阶段的Button，点击过了要隐藏掉，默认隐藏，需要手动显示 -->
+        <Button Content="记忆好了点这里！" Name="MemorizeOKButton" HorizontalAlignment="Center" Margin="0,512,0,50" VerticalAlignment="Center" Height="116" Width="926" FontSize="72" FontFamily="Times New Roman" FontWeight="Bold" Click="MemorizeOKButtonClick" Visibility="Collapsed">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <!--
+    以下是训练/练习阶段时的组件
+    -->
+        <Grid x:Name="PlayGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="CountdownDisplay" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="40" RenderTransformOrigin="-1.45,0.497" Margin="0,0,70,0"/>
+            <Button Focusable="False" Content="结束" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Bottom" Height="120" Width="200" FontFamily="Times New Roman" FontSize="72" FontWeight="Bold" Click="EndClick" Margin="0,0,50,50"/>
+            <Canvas x:Name="WordArea" Grid.Row="1" Background="#FFDDDB8B" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1200">
+                <Rectangle x:Name="TargetArea" Height="200" Width="200" Fill="Red" HorizontalAlignment="Center" Canvas.Left="500" VerticalAlignment="Top" />
+            </Canvas>
+            <Button Click="StartClick" Content="开始" HorizontalAlignment="Left" VerticalAlignment="Top" Height="120" Width="200" FontFamily="Times New Roman" FontSize="72" Focusable="False" FontWeight="Bold" Margin="50,50,0,0"/>
+            <!-- 图片控件，用于显示反馈 -->
+            <Image  Name="CorrectImage" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+            <Image  Name="ErrorImage" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+            <!-- 文字控件，用于显示反馈 -->
+            <TextBlock Grid.Row="2" Name="CorrectTextBlock" Width="150" Height="150" Text="正确!" FontSize="40" Foreground="Yellow" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" TextAlignment="Center"/>
+            <TextBlock Grid.Row="2" Name="ErrorTextBlock" Width="150" Height="150" Text="错误!" FontSize="40" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" TextAlignment="Center"/>
+        </Grid>
+    </Grid>
+</local:BaseUserControl>

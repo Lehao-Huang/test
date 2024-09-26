@@ -1,0 +1,81 @@
+﻿<local:BaseUserControl x:Class="crs.game.Games.图形记忆力"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:local="clr-namespace:crs.game"
+                       Height="720" Width="1280"
+                       Background="#79b63f">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 第一个界面内容 -->
+        <Grid x:Name="Grid1"  Grid.Row="1" Grid.Column="1"  >
+            <Border Background="#EAF1DE"/>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="16,34,16,158">
+                <UniformGrid x:Name="imageContainer" Columns="3"/>
+            </Border>
+            <Button x:Name="OK" Foreground="Black" Content="当你记住所有物品的时候按下该按钮" 
+                    Width="680" Height="76"  FontSize="40"
+                    HorizontalAlignment="Center" VerticalAlignment="Top" 
+                    Click="ContinueButton_Click" Margin="0,495,0,0"/>
+        </Grid>
+
+        <!-- 第二个界面内容 -->
+        <Grid x:Name="Grid2" Grid.Row="1" Grid.Column="1"  Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Border Background="#FCFCB2" Grid.Row="1"/>
+            <Grid Grid.Row="0">
+                <Border x:Name="textBlock"
+                        Background="Green" 
+                        BorderBrush="Black" 
+                        BorderThickness="2" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Width="322" 
+                        Height="65" Margin="400,0,0,0">
+                    <TextBlock x:Name="textBlock1"
+                               FontSize="30" 
+                               Foreground="Black" 
+                               TextWrapping="Wrap" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+            <Grid x:Name="ImageGrid" Grid.Row="1">
+                <Border Grid.Column="0" BorderBrush="White" BorderThickness="1" Margin="0,0,632,0">
+                    <Canvas x:Name="imageContainer2" />
+                </Border>
+                <Rectangle 
+    x:Name="SelectionBox"  
+    StrokeThickness="20" 
+    Stroke="#ed8760"  
+    Visibility="Visible" 
+    Grid.Column="1"
+    Fill="Transparent"
+    Panel.ZIndex="1"
+/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="825*"/>
+                    <ColumnDefinition Width="222*"/>
+                    <ColumnDefinition Width="233*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button x:Name="AnswerOK" Content="按下OK来选择!" Width="320" Height="64" Background="White" FontSize="40"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Click="OkButton_Click" />
+            </Grid>
+        </Grid>
+    </Grid>
+</local:BaseUserControl>

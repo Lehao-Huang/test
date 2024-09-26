@@ -1,0 +1,97 @@
+﻿<local:BaseUserControl x:Class="crs.game.Games.反应行为"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:local="clr-namespace:crs.game"
+                                Width="1280"
+         Height="720"
+         Background="#79b63f">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition x:Name="ImageGrid" Width="13*" />
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border x:Name="BorderElement"
+            Grid.ColumnSpan="2"
+            Margin="13,10,0,0"
+            Background="#649434" />
+        <Border Grid.Column="3" Background="#d0e3b6" />
+        <Border Grid.Column="5" Background="#d0e3b6" />
+        <Grid Grid.Column="1">
+            <Image x:Name="RandomImage"
+               Width="200"
+               Height="200" />
+        </Grid>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="Left"
+                   Grid.Row="1"
+               Grid.Column="0"
+               HorizontalAlignment="Left"
+               Visibility="Visible"/>
+            <Viewbox Grid.Row="1" x:Name="left_arrow"
+                 Grid.Column="1"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center">
+                <TextBlock Text="= ←"
+                       Visibility="Visible" />
+            </Viewbox>
+            <Image x:Name="Right"
+               Grid.Row="2"
+               Grid.Column="0"
+               HorizontalAlignment="Left"
+               Visibility="Visible" />
+            <Viewbox x:Name="right_arrow"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Visibility="Visible">
+                <TextBlock Text="= →" />
+            </Viewbox>
+            <Image x:Name="Forbid"
+               Grid.Row="3"
+               Grid.Column="0"
+               HorizontalAlignment="Left"
+               Visibility="Visible" />
+            <Viewbox x:Name="forbid"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Visibility="Visible">
+                <TextBlock Text="= ↓ " />
+            </Viewbox>
+            <Image x:Name="Forward"
+               Grid.Row="4"
+               Grid.Column="0"
+               HorizontalAlignment="Left"
+               Visibility="Visible" />
+             <Viewbox x:Name="forward"
+                 Grid.Row="4"
+                 Grid.Column="1"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Center"
+                 Visibility="Visible">  
+                <TextBlock Text="= ↑ " />
+            </Viewbox>
+
+        </Grid>
+
+    </Grid>
+</local:BaseUserControl>
+

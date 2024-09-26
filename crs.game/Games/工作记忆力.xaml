@@ -1,0 +1,80 @@
+﻿<local:BaseUserControl x:Class="crs.game.Games.工作记忆力"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:local="clr-namespace:crs.game"
+                                    Height="720" Width="1280"
+    Background="#E5F0DB">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#eaf0df" Grid.Column="0"/>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Border BorderBrush="Black" BorderThickness="1" >
+                    <UniformGrid x:Name="imageContainer" Margin="-1,0,0,0" />
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border BorderBrush="Black" BorderThickness="1" >
+                    <UniformGrid x:Name="imageContainer2" Columns="3"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Border BorderBrush="Black" BorderThickness="1" >
+                    <UniformGrid x:Name="imageContainer3" Columns="3"/>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Button x:Name="begin" Foreground="Black" Content="开始" 
+                Width="197" Height="76"  FontSize="40"
+                HorizontalAlignment="Center" VerticalAlignment="Top" 
+                Click="beginButton_Click" Margin="0,495,0,0"/>
+            <Button x:Name="confirm" Foreground="Black" Content="确认" 
+                Width="197" Height="76"  FontSize="40"
+                HorizontalAlignment="Center" VerticalAlignment="Top" 
+                Click="confirmButton_Click" Margin="0,600,0,0"/>
+
+            <TextBlock x:Name="TimeTextBlock" 
+
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               Margin="0,31,0,0" 
+               FontSize="54" 
+               Foreground="Black" Height="73" Width="164"/>
+
+            <TextBlock x:Name="levelTextBlock" 
+                   Text=""
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               Margin="0,121,0,0" 
+               FontSize="54" 
+               Foreground="Black" Height="73" Width="196"/>
+
+            <TextBlock x:Name="modeTextBlock" 
+                   Text=""
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               Margin="0,222,0,0" 
+               FontSize="32" 
+               Foreground="Black" Height="157" Width="196" TextWrapping="Wrap"/>
+
+            <Border x:Name="textBlock"
+Background="Green" 
+BorderBrush="Black" 
+BorderThickness="2" 
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Width="210" 
+Height="73" Margin="0,401,0,0"/>
+        </Grid>
+    </Grid>
+</local:BaseUserControl>
+

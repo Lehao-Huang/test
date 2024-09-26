@@ -1,0 +1,28 @@
+﻿<local:BaseUserControl x:Class="crs.game.Games.细节记忆力"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:local="clr-namespace:crs.game"
+                       Height="720" Width="1280">
+    <Grid Background="#e8f1dc">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="3" Background="#79b63f"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10"/>
+        <TextBlock x:Name="CountdownTextBlock" Text="10" Foreground="Green" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1153,62,0,0" Grid.RowSpan="2"/>
+        <Border x:Name="StoryBorder" Grid.Row="1" Background="#FFFFFF" Padding="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="400">
+            <StackPanel>
+                <TextBlock x:Name="MaterialTitleTextBlock" FontSize="27" FontWeight="Black" TextAlignment="Center" Margin="0,0,0,10"/>
+                <TextBlock x:Name="MaterialContentTextBlock" FontSize="21" TextWrapping="Wrap" Margin="0,0,0,10"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,60">
+            <Button Content="OK" Width="80" Height="80" Background="#79b63f" Foreground="White" BorderBrush="Transparent" FontSize="25" Click="OkButton_Click" 
+             RenderTransformOrigin="0.493,-0.403"/>
+        </StackPanel>
+    </Grid>
+</local:BaseUserControl>
+
